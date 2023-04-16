@@ -5,6 +5,7 @@ function index(req, res) {
   .then(flights => {
     res.render('flights/index', {
     flights: flights,
+    title: 'All Flights'
   })
   })
   .catch(error => {
@@ -30,10 +31,28 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Flight.findById(req.params.flightId)
+  .then(flight => {
+    res.render('flights/show', {
+      flight: flight,
+      title: 'Flight Details'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/flights')
+  })
+}
+
+
+
+
 export {
   newFlight as new,
   index,
   create,
+  show,
 }
 
 

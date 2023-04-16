@@ -5,21 +5,21 @@
 <main>
   <h1><%= title %></h1>
   <section>
-    <div>Title: </div>
+    <div>Flight Details </div>
     <div>
       <%= flight.title %>
       <a href="/flights/<%= flight._id %>/edit">
         <button>Edit Flight</button>
       </a>
     </div>
-    <div>Release Year: </div>
-    <div><%= movie.releaseYear %></div>
-    <div>Rating: </div>
-    <div><%= movie.mpaaRating %></div>
-    <div>Cast: </div>
-    <div><%= movie.cast.join(', ') %></div>
-    <div>Now Showing: </div>
-    <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
+    <div>Airline: </div>
+    <div><%= flight.airline %></div>
+    <div>Airport: </div>
+    <div><%= flight.airport %></div>
+    <div>Flight #: </div>
+    <div><%= flight.flightNo %></div>
+    <div>Departs: </div>
+    <div><%= flight.departs %></div>
   </section>
 </main>
   

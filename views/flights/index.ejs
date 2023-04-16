@@ -1,3 +1,7 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/index.css" />
+<%- include('../partials/nav') %>
+
 <main>
   <h1>Flights</h1>
   <table>
@@ -10,12 +14,13 @@
       </tr>
     </thead>
     <tbody>
-      <% flights.forEach(flight => {  %>
+      <% flights.forEach((flight) => {  %>
         <tr>
           <td><%= flight.airline %></td>
           <td><%= flight.airport %></td>
           <td><%= flight.flightNo %></td>
           <td><%= flight.departs %></td>
+          <td><a href="/flights/<%= flight._id %>">DETAILS</a></td
         </tr>
       <% }) %>
     </tbody>
