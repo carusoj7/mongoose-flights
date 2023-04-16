@@ -32,6 +32,7 @@ function create(req, res) {
 
 export {
   newFlight as new,
+  index,
   create,
 }
 

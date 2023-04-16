@@ -8,22 +8,23 @@ const flightSchema = new Schema ({
     enum: ['American', 'Southwest', 'United']},
   airport: {
     type: String,
-    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN']},
-    default: ['DEN'],
+    enum: ['AUS', 'DFW', 'DEN', 'LAX', 'SAN'],
+    default:'DEN'
+  },
   flightNo: {
     type: Number,
     required: {
       min: 10,
       max: 9999
     }
-  }
-  // departs: {
-  //   type: Date,
-  //   default: function() {
-  //     const nextYear = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
-  //     return nextYear
-  //   }
-  // },
+  },
+  departs: {
+    type: Date,
+    default: function() {
+      const nextYear = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+      return nextYear
+    }
+  },
 })
 
 const Flight = mongoose.model('Flight', flightSchema)
