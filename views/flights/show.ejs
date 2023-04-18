@@ -60,7 +60,7 @@
         <% }) %>
       </ul>
   </section>
-<form id="add-meal-option-to=meal" action="???" method="POST">
+<form id="add-meal-option-to=meal" action="/flights/<%= flight._id %>/meals" method="POST">
   <select name="mealId">
     <% meals.forEach(meal => { %>
       <option value="<%= meal._id %>"><%= meal.name %></option>
