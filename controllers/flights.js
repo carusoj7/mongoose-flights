@@ -36,7 +36,7 @@ function create(req, res) {
 
 function show(req, res) {
   Flight.findById(req.params.flightId)
-  .populate('dining')
+  .populate('meals')
   .then(flight => {
     Meal.find({_id: {$nin: flight.meals}})
     .then(meals => {
@@ -115,6 +115,10 @@ function createTicket(req, res) {
   })
 }
 
+function addToMeal(req, res) {
+  console.log("This works");
+}
+
 
 export {
   newFlight as new,
@@ -124,7 +128,8 @@ export {
   deleteFlight as delete,
   edit,
   update,
-  createTicket
+  createTicket,
+  addToMeal,
 }
 
 
